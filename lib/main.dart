@@ -31,7 +31,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  // App khulte hi apne aap ek 6-digit ka random ID ban jayega
   final callIdController = TextEditingController(
     text: (Random().nextInt(900000) + 100000).toString(),
   );
@@ -108,14 +107,14 @@ class CallPage extends StatelessWidget {
 
     return SafeArea(
       child: ZegoUIKitPrebuiltCall(
-        // 🔥 YAHAN PAR APNA ASALI APP ID AUR APP SIGN DAALNA HAI 🔥
-        appID: 1413274594// Isko hatakar apna ZegoCloud ka AppID likho (Bina kisi "" ke)
-        appSign: "b29585a1e133bc2edd9a0c1cb7b65e961ebfc00b4710e9dfeb79de6eae559a20", // Isko hatakar apna AppSign likho ("" ke andar)
+        appID: 1413274594,
+        appSign: "b29585a1e133bc2edd9a0c1cb7b65e961ebfc00b4710e9dfeb79de6eae559a20",
         userID: userID,
         userName: userName,
         callID: callID,
         config: ZegoUIKitPrebuiltCallConfig.oneOnOneVideoCall(),
       ),
+  
     );
   }
 }
