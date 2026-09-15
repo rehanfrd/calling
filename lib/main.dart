@@ -31,13 +31,16 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final callIdController = TextEditingController(text: "ZingMeeting_101");
+  // App khulte hi apne aap ek 6-digit ka random ID ban jayega
+  final callIdController = TextEditingController(
+    text: (Random().nextInt(900000) + 100000).toString(),
+  );
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Zing Call - Web", style: TextStyle(fontWeight: FontWeight.bold)),
+        title: const Text("Zing Call", style: TextStyle(fontWeight: FontWeight.bold)),
         backgroundColor: Colors.blueAccent,
         foregroundColor: Colors.white,
         centerTitle: true,
@@ -51,7 +54,7 @@ class _HomePageState extends State<HomePage> {
               const Icon(Icons.video_camera_front, size: 80, color: Colors.blueAccent),
               const SizedBox(height: 30),
               const Text(
-                "Enter Meeting ID to Join",
+                "Share this ID to invite friends",
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
               const SizedBox(height: 20),
@@ -76,7 +79,7 @@ class _HomePageState extends State<HomePage> {
                   );
                 },
                 icon: const Icon(Icons.call),
-                label: const Text("Join Video Call", style: TextStyle(fontSize: 16)),
+                label: const Text("Start / Join Call", style: TextStyle(fontSize: 16)),
                 style: ElevatedButton.styleFrom(
                   minimumSize: const Size(double.infinity, 50),
                   backgroundColor: Colors.blueAccent,
@@ -100,14 +103,14 @@ class CallPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Har baar ek naya random user ID banega
     final String userID = Random().nextInt(100000).toString();
-    final String userName = "Guest_$userID";
+    final String userName = "User_$userID";
 
     return SafeArea(
       child: ZegoUIKitPrebuiltCall(
-        appID: 1234567890, // Yahan apna asali App ID daalna hai
-        appSign: "YOUR_APP_SIGN_HERE", // Yahan apna asali App Sign daalna hai
+        // 🔥 YAHAN PAR APNA ASALI APP ID AUR APP SIGN DAALNA HAI 🔥
+        appID: 1413274594// Isko hatakar apna ZegoCloud ka AppID likho (Bina kisi "" ke)
+        appSign: "b29585a1e133bc2edd9a0c1cb7b65e961ebfc00b4710e9dfeb79de6eae559a20", // Isko hatakar apna AppSign likho ("" ke andar)
         userID: userID,
         userName: userName,
         callID: callID,
