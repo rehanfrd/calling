@@ -9,7 +9,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  zego_uikit_prebuilt_call: ^4.24.4
+  # 🔥 Yeh version Flutter 3.5.3 aur Dart SDK ke sath 100% compatible hai 🔥
+  zego_uikit_prebuilt_call: ^4.17.13
 
 flutter:
   uses-material-design: true
