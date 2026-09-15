@@ -9,7 +9,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  zego_uikit_prebuilt_call: ^4.24.4
+  # 🔥 ZegoCloud ka version Flutter 3.19 ke hisaab se set kar diya gaya hai 🔥
+  zego_uikit_prebuilt_call: ^4.12.11
 
 flutter:
   uses-material-design: true
